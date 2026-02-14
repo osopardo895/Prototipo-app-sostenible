@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.css'
 import List from './components/List.tsx'
 import HolaReact from './components/HolaReact.tsx'
+import Ods from './components/ods.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HolaReact />
-    <List />
+    <Ods />
   </StrictMode>,
 )

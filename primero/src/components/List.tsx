@@ -9,14 +9,12 @@ function List() {
 
   return (
     <div>
-      <ul class="list-group" {
-        constructor(parameters) {
-          
-        }
-      }>
-        {items.map((item) => (
-          <li key={item}>{item}</li>)
-          )}
+      <ul className="list-group">
+        {items.map(item => (
+          <li className="list-group-item" key={item}>
+            {item}
+          </li>
+        ))}
       </ul>
     </div>
   );
