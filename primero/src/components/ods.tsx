@@ -62,7 +62,7 @@ const iniciativas: IniciativaSostenible[] = [
 ];
 
 // 2. Filtrar solo las que tengan impacto climático (ODS 13)
-function filtrarProyectosClimaticos(proyectos: IniciativaSostenible[]):IniciativaSostenible[]{
+function filtrarProyectosClimaticos(proyectos: IniciativaSostenible[]): IniciativaSostenible[]{
     return proyectos.filter(p => p.odsPrincipal === listaODS.AccionPorElCLima);
 }
 
@@ -126,6 +126,8 @@ function publicarProyecto(p:ProyectoPublico<any>) {
 }
 
 
-export default function VistaODS() {
-    return publicarProyecto(proyectoSolar);
+const resultadoJson = filtrarProyectosClimaticos(iniciativas);
+console.log(resultadoJson);
+export default function Ods() {
+    return <h1>{JSON.stringify(resultadoJson, null, 1)}</h1>
 };
