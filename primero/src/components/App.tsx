@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { Card } from './Card'
+import { iniciativas } from '../data/Ods'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Bootstrap</h1>
-    </>
+    <div className="container">
+      <h1>Lista ODS</h1>
+      <div className="grid">
+        {iniciativas.map((item) => (
+          <Card key={item.id} itemOds={item} />
+        ))}
+      </div>
+    </div>
   )
 }
 

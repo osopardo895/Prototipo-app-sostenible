@@ -1,55 +1,58 @@
 // PASO 1: Modelado de Datos (Enums, Interfaces y Tipos Básicos
 
 enum listaODS {
-    FinDeLaPobreza = 'ODS 1',
-    HambreCero = 'ODS 2',
-    SaludYBienestar = 'ODS 3',
-    EducacionDeCalidad = 'ODS 4',
-    IgualdadDeGenero = 'ODS 5',
-    AguaLimpiaYSaneamiento = 'ODS 6',
-    EnergiaAsequibleYNoContaminante = 'ODS 7',
-    TrabajoDecenteYCrecimientoEconomico = 'ODS 8',
-    IndustriaInnovacionEInfraestructura = 'ODS 9',
-    ReduccionDesigualdades = 'ODS 10',
-    CiudadesYComunidadesSostenibles = 'ODS 11',
-    ProduccionYConsumoResponsables = 'ODS 12',
-    AccionPorElCLima = 'ODS 13',
-    VidaSubmarina = 'ODS 14',
-    VidaDeEcosistemasTerrestres = 'ODS 15',
-    PazJusticiaEInstitucionesSolidas = 'ODS 16',
-    AlianzasParaLograrLosObjetivos = 'ODS 17'
+    FinDeLaPobreza = 'ODS 1 Fin de la Pobreza',
+    HambreCero = 'ODS 2 Hambre Cero',
+    SaludYBienestar = 'ODS 3 Salud y Bienestar',
+    EducacionDeCalidad = 'ODS 4 Educación de Calidad',
+    IgualdadDeGenero = 'ODS 5 Igualdad de Género',
+    AguaLimpiaYSaneamiento = 'ODS 6 Agua Limpia y Saneamiento',
+    EnergiaAsequibleYNoContaminante = 'ODS 7 Energía Asequible y No Contaminante',
+    TrabajoDecenteYCrecimientoEconomico = 'ODS 8 Trabajo Decente y Crecimiento Económico',
+    IndustriaInnovacionEInfraestructura = 'ODS 9 Industria, Innovación e Infraestructura',
+    ReduccionDesigualdades = 'ODS 10 Reducción de las Desigualdades',
+    CiudadesYComunidadesSostenibles = 'ODS 11 Ciudades y Comunidades Sostenibles',
+    ProduccionYConsumoResponsables = 'ODS 12 Producción y Consumo Responsables',
+    AccionPorElCLima = 'ODS 13 Acción por el Clima',
+    VidaSubmarina = 'ODS 14 Vida Submarina',
+    VidaDeEcosistemasTerrestres = 'ODS 15 Vida de Ecosistemas Terrestres',
+    PazJusticiaEInstitucionesSolidas = 'ODS 16 Paz, Justicia e Instituciones Sólidas',
+    AlianzasParaLograrLosObjetivos = 'ODS 17 Alianzas para Lograr los Objetivos'
 }
 
 type EstadosOds = 'Planificado' | 'En Progreso' | 'Completado' | 'Auditado';
 
-interface IniciativaSostenible {
+export interface IniciativaSostenible {
     id:number;
     nombre:string;
     odsPrincipal:listaODS; // Obliga a usar un valor de la lista
     presupuesto:number;
     estado: EstadosOds;
     toneladasCO2Ahorradas?: number; //Opcional, (símbolo ?)
+    color?: string; // Otro campo opcional para el color de la tarjeta
 }
 
 
 // PASO 2: Lógica y Manipulación de Arrays
 
 // 1. Crear un array de iniciativas.
-const iniciativas: IniciativaSostenible[] = [
+export const iniciativas: IniciativaSostenible[] = [
     {
     id: 1,
     nombre: 'Paneles Solares en Sede Central',
     odsPrincipal: listaODS.EnergiaAsequibleYNoContaminante,
     presupuesto: 50000,
     estado: 'En Progreso',
-    toneladasCO2Ahorradas: 120
+    toneladasCO2Ahorradas: 120,
+    color: "#59cd00"
     },
     {
     id: 2,
     nombre: 'Programa de Mentoring para Mujeres Tech',
     odsPrincipal: listaODS.IgualdadDeGenero,
     presupuesto: 15000, 
-    estado: 'Completado'
+    estado: 'Completado',
+    color: "#ff69b4"
     },
     {
     id: 3,
@@ -57,7 +60,8 @@ const iniciativas: IniciativaSostenible[] = [
     odsPrincipal: listaODS.AccionPorElCLima,
     presupuesto: 80000,
     estado: 'Planificado',
-    toneladasCO2Ahorradas: 300
+    toneladasCO2Ahorradas: 300,
+    color: "#1e90ff"
     }
 ];
 
@@ -124,10 +128,3 @@ function publicarProyecto(p:ProyectoPublico<any>) {
         </>
     )
 }
-
-
-const resultadoJson = filtrarProyectosClimaticos(iniciativas);
-console.log(resultadoJson);
-export default function Ods() {
-    return <h1>{JSON.stringify(resultadoJson, null, 1)}</h1>
-};
