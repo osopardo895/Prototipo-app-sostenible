@@ -2,7 +2,7 @@
 
 ---
 
-Repositorio experimental que prueba las funciones y capacidades de Node.js y React, mientras se trabaja con el lenguaje Typescript.
+Repositorio experimental que prueba las funciones y capacidades de Node.js y React, mientras se trabaja con el lenguaje Typescript en multiples situaciones condicionales de css y html.
 
 Vite: es una herramienta de construcción (build tool) de siguiente generación que busca ofrecer una experiencia de desarrollo más rápida y ligera. Funciona con casi cualquier framework (React, Svelte, Preact, etc.).
 
@@ -10,4 +10,5 @@ React: es una biblioteca de JavaScript de código abierto diseñada para crear i
 
 Node.js: es un entorno de ejecución (runtime) que permite ejecutar JavaScript en servidores.
 
-<img width="1919" height="877" alt="Captura de pantalla 2026-03-11 001859" src="https://github.com/user-attachments/assets/88c46c93-2ace-403c-8842-6efb9129c9c4" />
+<img width="1919" height="879" alt="imagen" src="https://github.com/user-attachments/assets/b535a9d0-96c3-4be6-a2db-7b29c4fa56ef" />
+
