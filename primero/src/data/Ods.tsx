@@ -23,10 +23,10 @@ enum listaODS {
 type EstadosOds = 'Planificado' | 'En Progreso' | 'Completado' | 'Auditado';
 
 export interface IniciativaSostenible {
-    id:number;
-    nombre:string;
-    odsPrincipal:listaODS; // Obliga a usar un valor de la lista
-    presupuesto:number;
+    id: number;
+    nombre: string;
+    odsPrincipal: listaODS; // Obliga a usar un valor de la lista
+    presupuesto: number;
     estado: EstadosOds;
     toneladasCO2Ahorradas?: number; //Opcional, (símbolo ?)
     color?: string; // Otro campo opcional para el color de la tarjeta
@@ -38,35 +38,148 @@ export interface IniciativaSostenible {
 // 1. Crear un array de iniciativas.
 export const iniciativas: IniciativaSostenible[] = [
     {
-    id: 1,
-    nombre: 'Paneles Solares en Sede Central',
-    odsPrincipal: listaODS.EnergiaAsequibleYNoContaminante,
-    presupuesto: 50000,
-    estado: 'En Progreso',
-    toneladasCO2Ahorradas: 120,
-    color: "#59cd00"
+        id: 1,
+        nombre: 'Erradicación de la Pobreza Extrema',
+        odsPrincipal: listaODS.FinDeLaPobreza,
+        presupuesto: 100000,
+        estado: 'En Progreso',
+        color: "#e74c3c"
     },
     {
-    id: 2,
-    nombre: 'Programa de Mentoring para Mujeres Tech',
-    odsPrincipal: listaODS.IgualdadDeGenero,
-    presupuesto: 15000, 
-    estado: 'Completado',
-    color: "#ff69b4"
+        id: 2,
+        nombre: 'Programa de Seguridad Alimentaria',
+        odsPrincipal: listaODS.HambreCero,
+        presupuesto: 75000,
+        estado: 'En Progreso',
+        color: "#f39c12"
     },
     {
-    id: 3,
-    nombre: 'Flota de vehículos eléctricos',
-    odsPrincipal: listaODS.AccionPorElCLima,
-    presupuesto: 80000,
-    estado: 'Planificado',
-    toneladasCO2Ahorradas: 300,
-    color: "#1e90ff"
-    }
-];
+        id: 3,
+        nombre: 'Clínica de Salud Comunitaria',
+        odsPrincipal: listaODS.SaludYBienestar,
+        presupuesto: 120000,
+        estado: 'Planificado',
+        color: "#27ae60"
+    },
+    {
+        id: 4,
+        nombre: 'Becas Educativas para Comunidades Rurales',
+        odsPrincipal: listaODS.EducacionDeCalidad,
+        presupuesto: 60000,
+        estado: 'En Progreso',
+        color: "#3498db"
+    },
+    {
+        id: 5,
+        nombre: 'Programa de Mentoring para Mujeres Tech',
+        odsPrincipal: listaODS.IgualdadDeGenero,
+        presupuesto: 15000,
+        estado: 'Completado',
+        color: "#ff69b4"
+    },
+    {
+        id: 6,
+        nombre: 'Pipeline Agua Potable Sostenible',
+        odsPrincipal: listaODS.AguaLimpiaYSaneamiento,
+        presupuesto: 200000,
+        estado: 'Planificado',
+        color: "#2980b9"
+    },
+    {
+        id: 7,
+        nombre: 'Paneles Solares en Sede Central',
+        odsPrincipal: listaODS.EnergiaAsequibleYNoContaminante,
+        presupuesto: 50000,
+        estado: 'En Progreso',
+        toneladasCO2Ahorradas: 120,
+        color: "#59cd00"
+    },
+    {
+        id: 8,
+        nombre: 'Emprendimiento para Jóvenes Trabajadores',
+        odsPrincipal: listaODS.TrabajoDecenteYCrecimientoEconomico,
+        presupuesto: 55000,
+        estado: 'Completado',
+        color: "#ff8c00"
+    },
+    {
+        id: 9,
+        nombre: 'Centro de Innovación Tecnológica',
+        odsPrincipal: listaODS.IndustriaInnovacionEInfraestructura,
+        presupuesto: 150000,
+        estado: 'En Progreso',
+        color: "#9b59b6"
+    },
+    {
+        id: 10,
+        nombre: 'Programa de Inclusión Económica',
+        odsPrincipal: listaODS.ReduccionDesigualdades,
+        presupuesto: 90000,
+        estado: 'Planificado',
+        color: "#e67e22"
+    },
+    {
+        id: 11,
+        nombre: 'Regeneración Urbana Sostenible',
+        odsPrincipal: listaODS.CiudadesYComunidadesSostenibles,
+        presupuesto: 250000,
+        estado: 'En Progreso',
+        color: "#16a085"
+    },
+    {
+        id: 12,
+        nombre: 'Transición a Economía Circular',
+        odsPrincipal: listaODS.ProduccionYConsumoResponsables,
+        presupuesto: 110000,
+        estado: 'Planificado',
+        color: "#c0392b"
+    },
+    {
+        id: 13,
+        nombre: 'Flota de vehículos eléctricos',
+        odsPrincipal: listaODS.AccionPorElCLima,
+        presupuesto: 80000,
+        estado: 'Planificado',
+        toneladasCO2Ahorradas: 300,
+        color: "#1e90ff"
+    },
+    {
+        id: 14,
+        nombre: 'Reserva Marina Protegida',
+        odsPrincipal: listaODS.VidaSubmarina,
+        presupuesto: 85000,
+        estado: 'En Progreso',
+        toneladasCO2Ahorradas: 250,
+        color: "#0077be"
+    },
+    {
+        id: 15,
+        nombre: 'Reforestación de Bosques Nativos',
+        odsPrincipal: listaODS.VidaDeEcosistemasTerrestres,
+        presupuesto: 95000,
+        estado: 'En Progreso',
+        toneladasCO2Ahorradas: 500,
+        color: "#228b22"
+    },
+    {
+        id: 16,
+        nombre: 'Centro de Resolución de Conflictos',
+        odsPrincipal: listaODS.PazJusticiaEInstitucionesSolidas,
+        presupuesto: 70000,
+        estado: 'Planificado',
+        color: "#4a90e2"
+    },
+    {
+        id: 17,
+        nombre: 'Alianza Global de Desarrolladores Sostenibles',
+        odsPrincipal: listaODS.AlianzasParaLograrLosObjetivos,
+        presupuesto: 130000,
+        estado: 'En Progreso',
+        color: "#7b68ee"
+    }];
 
 // 2. Filtrar solo las que tengan impacto climático (ODS 13)
-function filtrarProyectosClimaticos(proyectos: IniciativaSostenible[]): IniciativaSostenible[]{
+function filtrarProyectosClimaticos(proyectos: IniciativaSostenible[]): IniciativaSostenible[] {
     return proyectos.filter(p => p.odsPrincipal === listaODS.AccionPorElCLima);
 }
 
@@ -79,7 +192,7 @@ const totalCO2 = iniciativas.reduce((acc, curr) => acc + (curr.toneladasCO2Ahorr
 console.log(`Total de CO2 ahorrado: ${totalCO2} toneladas`);
 
 
- // PASO 3: Nivel Avanzado (Genéricos y Utility Types)
+// PASO 3: Nivel Avanzado (Genéricos y Utility Types)
 
 // Definimos tipos de impacto específicos
 interface ImpactoAmbiental {
@@ -105,21 +218,21 @@ const proyectoSolar: Proyecto<ImpactoAmbiental> = {
     nombre: "Techo Solar",
     ods: listaODS.EnergiaAsequibleYNoContaminante,
     presupuesto: 20000,
-    impacto: { co2Reducido: 500, aguaAhorrada: 0}
+    impacto: { co2Reducido: 500, aguaAhorrada: 0 }
 }
 
 const proyectoEdu: Proyecto<ImpactoSocial> = {
     nombre: "Escuela de Código Inclusiva",
     ods: listaODS.FinDeLaPobreza,
     presupuesto: 10000,
-    impacto: { personasBeneficiadas: 50, horasFormacion: 200}
+    impacto: { personasBeneficiadas: 50, horasFormacion: 200 }
 }
 
 // Utility Type: Omit
 // Queremos publicar el proyecto en la web, pero SIN mostrar el dinero
 type ProyectoPublico<T> = Omit<Proyecto<any>, 'presupuesto'>;
 
-function publicarProyecto(p:ProyectoPublico<any>) {
+function publicarProyecto(p: ProyectoPublico<any>) {
     console.log(`Publicando: ${p.nombre} - ODS: ${p.ods}`);
     // p.presupuesto daría error aquí, ¡seguridad conseguida!
     return (
